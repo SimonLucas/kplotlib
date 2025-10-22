@@ -1,5 +1,8 @@
-package sml.plotlib
+package sml.plotlib.examples
 
+import sml.plotlib.core.PlotStyle
+import sml.plotlib.core.Series
+import sml.plotlib.core.plot
 import kotlin.math.*
 
 fun main() {
@@ -23,5 +26,6 @@ fun main() {
         )
     }
 
-    p.show()
+//    p.show()
+    p.save("./docs/img/SineWithErrors.png")
 }

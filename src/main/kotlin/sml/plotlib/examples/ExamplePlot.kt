@@ -1,5 +1,7 @@
-package sml.plotlib
+package sml.plotlib.examples
 
+import sml.plotlib.core.line
+import sml.plotlib.core.plot
 import kotlin.math.*
 
 fun main() {

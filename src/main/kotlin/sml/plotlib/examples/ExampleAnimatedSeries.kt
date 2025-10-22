@@ -1,5 +1,9 @@
-package sml.plotlib
+package sml.plotlib.examples
 
+import sml.plotlib.core.animate
+import sml.plotlib.core.line
+import sml.plotlib.core.plot
+import sml.plotlib.core.replaceAllWith
 import kotlin.math.*
 
 fun main() {

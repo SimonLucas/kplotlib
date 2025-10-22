@@ -1,6 +1,7 @@
-package sml.plotlib
+package sml.plotlib.core
 
 import java.awt.Graphics
+import java.awt.Graphics2D
 import javax.swing.JPanel
 import javax.swing.Timer
 
@@ -29,7 +30,7 @@ class AnimatedPlotPanel(
 
     override fun paintComponent(g: Graphics) {
         super.paintComponent(g)
-        renderer.draw(g as java.awt.Graphics2D, width, height)
+        renderer.draw(g as Graphics2D, width, height)
     }
 
     init {

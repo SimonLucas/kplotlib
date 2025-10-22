@@ -1,8 +1,18 @@
-package sml.plotlib
+package sml.plotlib.core
 
-import java.awt.*
-import java.awt.geom.*
+import java.awt.BasicStroke
+import java.awt.Color
+import java.awt.Font
+import java.awt.Graphics
+import java.awt.Graphics2D
+import java.awt.RenderingHints
+import java.awt.geom.Ellipse2D
+import java.awt.geom.Line2D
+import java.awt.geom.Path2D
+import java.awt.geom.Point2D
+import java.awt.geom.Rectangle2D
 import java.awt.image.BufferedImage
+import java.io.File
 import javax.imageio.ImageIO
 import javax.swing.JFrame
 import javax.swing.JPanel
@@ -40,7 +50,7 @@ class Renderer(private val plot: Plot) {
         val g2d = image.createGraphics()
         draw(g2d, width, height)
         g2d.dispose()
-        ImageIO.write(image, "png", java.io.File(path))
+        ImageIO.write(image, "png", File(path))
         println("Saved plot to $path")
     }
 

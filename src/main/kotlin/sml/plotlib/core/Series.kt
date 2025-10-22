@@ -1,6 +1,4 @@
-package sml.plotlib
-
-import java.awt.Color
+package sml.plotlib.core
 
 /**
  * Represents a single data series with mutable values.

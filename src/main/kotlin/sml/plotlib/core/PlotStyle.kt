@@ -1,4 +1,4 @@
-package sml.plotlib
+package sml.plotlib.core
 
 import java.awt.BasicStroke
 import java.awt.Color

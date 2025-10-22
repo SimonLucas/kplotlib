@@ -1,4 +1,4 @@
-package sml.plotlib
+package sml.plotlib.core
 
 fun <T> MutableList<T>.replaceAllWith(newValues: List<T>): MutableList<T> {
     require(size == newValues.size)

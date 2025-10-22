@@ -1,4 +1,4 @@
-package sml.plotlib
+package sml.plotlib.core
 
 /**
  * Holds axis configuration and computed range, with tick generation.

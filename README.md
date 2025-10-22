@@ -54,3 +54,12 @@ fun main() {
 
     Renderer(p).display()
 }
+```
+
+### Other examples
+
+See [examples folder](./src/main/kotlin/sml/plotlib/examples)
+
+Example output (written directly to .png file)
+
+![Figure](./docs/img/SineWithErrors.png)

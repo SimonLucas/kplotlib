@@ -1,7 +1,8 @@
-package sml.plotlib
+package sml.plotlib.core
 
 
 import java.awt.Color
+import javax.swing.JFrame
 
 /**
  * Represents a single 2D plot with axes, labels, and data series.
@@ -82,8 +83,8 @@ class Plot(
 }
 
 fun Plot.animate(fps: Int = 20, onFrame: (frame: Int, plot: Plot) -> Unit) {
-    val frame = javax.swing.JFrame(title.ifEmpty { "Animated Plot" })
-    frame.defaultCloseOperation = javax.swing.JFrame.EXIT_ON_CLOSE
+    val frame = JFrame(title.ifEmpty { "Animated Plot" })
+    frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     val panel = AnimatedPlotPanel(this, fps, onFrame)
     frame.contentPane.add(panel)
     frame.setSize(800, 600)
