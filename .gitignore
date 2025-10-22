@@ -1,7 +1,10 @@
+# Gradle
 .gradle/
 build/
-.idea/
 out/
+# Keep the wrapper JAR
+!gradle/wrapper/gradle-wrapper.jar.gradle/
+.idea/
 *.iml
 .DS_Store
 Thumbs.db
