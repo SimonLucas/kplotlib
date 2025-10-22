@@ -15,6 +15,7 @@ A lightweight, dependency-free 2D plotting library for **Kotlin (JVM)** — insp
 - ✅ Live animation (10–60 fps)
 - ✅ Auto-resizing and optional auto-scaling axes
 - ✅ No dependencies beyond the Kotlin standard library
+- ✅ Output to .svg or .png, and can be run headless
 
 ---
 
