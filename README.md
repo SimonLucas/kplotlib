@@ -68,5 +68,5 @@ Example output (written directly to .png file)
 
 Example output (direct to .svg file - smoother than .png)
 
-|[Figure](./docs/img/example-error-regions.svg)
+![Figure](./docs/img/example-error-regions.svg)
 
