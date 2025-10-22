@@ -8,21 +8,22 @@ fun main() {
     val x = (0..200).map { it / 20.0 }
     val y1 = x.map { sin(it) }
     val y2 = x.map { cos(it) }
-    val y3 = x.map { sin(it) * cos(it) }
-    val y4 = x.map { sin(it) * sin(it) }
-    val y5 = x.map { sin(it * it) }
 
-    val p = plot("Sine, Cosine, and Product") {
+    val p = plot("SVG Export Test") {
         xlabel = "x"
         ylabel = "f(x)"
-
         line("sin(x)", x, y1)
         line("cos(x)", x, y2)
-        line("sin(x)*cos(x)", x, y3)
-        line("sin(x)*sin(x)", x, y4)
-        line("sin(x * x)", x, y5)
     }
 
-    p.show()
-    // p.save("sine_cosine_legend.png")
+    // Test auto-detection by extension
+    p.save("./docs/img/test-auto.svg")
+
+    // Test explicit SVG method
+    p.saveSVG("./docs/img/test-explicit.svg")
+
+    // Test PNG still works
+    p.save("./docs/img/test-png.png")
+
+    println("SVG export test complete!")
 }

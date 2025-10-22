@@ -37,7 +37,8 @@ dependencies {
 ### 2️⃣ Static Example
 
 ```kotlin
-import sml.plotlib.*
+import sml.plotlib.core.line
+import sml.plotlib.core.plot
 import kotlin.math.*
 
 fun main() {
@@ -52,7 +53,7 @@ fun main() {
         line("cos(x)", x, y2)
     }
 
-    Renderer(p).display()
+    p.show()
 }
 ```
 
@@ -63,3 +64,8 @@ See [examples folder](./src/main/kotlin/sml/plotlib/examples)
 Example output (written directly to .png file)
 
 ![Figure](./docs/img/SineWithErrors.png)
+
+Example output (direct to .svg file - smoother than .png)
+
+|[Figure](./docs/img/example-error-regions.svg)
+

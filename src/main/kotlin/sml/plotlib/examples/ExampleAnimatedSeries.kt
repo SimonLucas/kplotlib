@@ -7,9 +7,9 @@ import sml.plotlib.core.replaceAllWith
 import kotlin.math.*
 
 fun main() {
-    val x = (0..200).map { it / 20.0 }.toMutableList()
-    val y1 = x.map { sin(it) }.toMutableList()
-    val y2 = x.map { cos(it) }.toMutableList()
+    val x = (0..200).map { it / 20.0 }
+    val y1 = x.map { sin(it) }
+    val y2 = x.map { cos(it) }
 
     val p = plot("Animated Sine and Cosine") {
         xlabel = "x"

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="80" y="60" width="560" height="480"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="white"/>
+  <rect x="80" y="60" width="560" height="480" fill="none" stroke="black" stroke-width="1"/>
+  <line x1="80.0" y1="540" x2="80.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="80.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">0.00</text>
+  <line x1="192.0" y1="540" x2="192.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="192.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">2.00</text>
+  <line x1="304.0" y1="540" x2="304.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="304.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">4.00</text>
+  <line x1="416.0" y1="540" x2="416.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="416.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">6.00</text>
+  <line x1="528.0" y1="540" x2="528.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="528.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">8.00</text>
+  <line x1="640.0" y1="540" x2="640.0" y2="545" stroke="black" stroke-width="1"/>
+  <text x="640.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12">10.00</text>
+  <line x1="75" y1="540.0" x2="80" y2="540.0" stroke="black" stroke-width="1"/>
+  <text x="70" y="540.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">-1.05</text>
+  <line x1="75" y1="444.0" x2="80" y2="444.0" stroke="black" stroke-width="1"/>
+  <text x="70" y="444.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">-0.62</text>
+  <line x1="75" y1="348.0" x2="80" y2="348.0" stroke="black" stroke-width="1"/>
+  <text x="70" y="348.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">-0.19</text>
+  <line x1="75" y1="251.99999999999994" x2="80" y2="251.99999999999994" stroke="black" stroke-width="1"/>
+  <text x="70" y="251.99999999999994" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">0.24</text>
+  <line x1="75" y1="156.0" x2="80" y2="156.0" stroke="black" stroke-width="1"/>
+  <text x="70" y="156.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">0.67</text>
+  <line x1="75" y1="60.0" x2="80" y2="60.0" stroke="black" stroke-width="1"/>
+  <text x="70" y="60.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">1.10</text>
+  <text x="360" y="580" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold">x</text>
+  <text x="20" y="300" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold" transform="rotate(-90 20 300)">y</text>
+  <text x="360" y="30" text-anchor="middle" font-family="SansSerif" font-size="16" font-weight="bold">Scatter Plot - SVG Export</text>
+  <circle cx="80.0" cy="313.21165098953503" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="91.2" cy="273.3396195061241" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="102.4" cy="236.95448595404974" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="113.6" cy="161.03498966372592" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="124.80000000000001" cy="150.48380307920428" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="136.0" cy="85.94929490165924" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="147.2" cy="122.0572059231717" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="158.39999999999998" cy="112.86036885991047" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="169.60000000000002" cy="102.00021546482338" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="180.8" cy="96.39201390837945" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="192.0" cy="85.18504157732315" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="203.20000000000002" cy="119.71143139659705" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="214.4" cy="127.60892986198292" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="225.6" cy="178.7136833880076" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="236.79999999999998" cy="232.89765345522113" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="248.0" cy="277.3643209661147" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="259.20000000000005" cy="294.88861594753905" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="270.4" cy="370.6761230711311" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="281.6" cy="427.67593963725176" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="292.8" cy="459.7029619178848" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="304.0" cy="500.1339494301955" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="315.20000000000005" cy="505.44043548659147" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="326.40000000000003" cy="540.0" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="337.59999999999997" cy="495.2143668456856" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="348.8" cy="522.4727416168176" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="360.0" cy="492.45536453711975" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="371.2" cy="492.1817163595261" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="382.40000000000003" cy="490.2611958176851" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="393.59999999999997" cy="467.3805458864158" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="404.79999999999995" cy="396.1142607132173" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="416.0" cy="376.59303416967634" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="427.2" cy="340.21724909713595" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="438.40000000000003" cy="259.4014604716933" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="449.59999999999997" cy="236.08661499772995" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="460.79999999999995" cy="209.9951622339122" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="472.0" cy="182.59237753570733" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="483.2" cy="125.37293891160937" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="494.4" cy="116.34765888076805" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="505.6" cy="60.0" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="516.8" cy="104.22317607215518" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="528.0" cy="111.0967938142474" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="539.2" cy="125.07094684214138" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="550.4000000000001" cy="116.21698207854371" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="561.5999999999999" cy="111.59474718453373" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="572.8000000000001" cy="165.387883483689" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="584.0" cy="231.2954678446004" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="595.1999999999999" cy="240.74549480585728" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="606.4" cy="291.8343493510772" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="617.6" cy="346.55211959468227" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="628.8000000000001" cy="384.61169697410054" r="3.0" fill="rgb(255,0,0)"/>
+  <circle cx="640.0" cy="418.2251328422186" r="3.0" fill="rgb(255,0,0)"/>
+  <text x="660" y="80" font-family="SansSerif" font-size="12" fill="black">Legend</text>
+  <line x1="660" y1="85" x2="690" y2="85" stroke="rgb(255,0,0)" stroke-width="0.0" stroke-linecap="round"/>
+  <circle cx="675" cy="85" r="3" fill="rgb(255,0,0)"/>
+  <text x="700" y="92" font-family="SansSerif" font-size="12" fill="black">noisy data</text>
+</svg>

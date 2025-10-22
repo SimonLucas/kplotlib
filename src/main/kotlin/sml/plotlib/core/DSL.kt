@@ -13,15 +13,15 @@ fun plot(title: String = "", block: Plot.() -> Unit): Plot {
 
 fun Plot.line(
     name: String = "series",
-    x: MutableList<Double>,
-    y: MutableList<Double>,
+    x: List<Double>,
+    y: List<Double>,
     color: Color? = null
 ) {
     addSeries(
         Series(
             name = name,
-            x = x,
-            y = y,
+            x = x.toMutableList(),
+            y = y.toMutableList(),
             style = PlotStyle(color = color ?: Color.BLUE)
         )
     )
@@ -29,15 +29,15 @@ fun Plot.line(
 
 fun Plot.scatter(
     name: String = "series",
-    x: MutableList<Double>,
-    y: MutableList<Double>,
+    x: List<Double>,
+    y: List<Double>,
     color: Color? = null
 ) {
     addSeries(
         Series(
             name = name,
-            x = x,
-            y = y,
+            x = x.toMutableList(),
+            y = y.toMutableList(),
             style = PlotStyle(color = color ?: Color.RED, showPoints = true, lineWidth = 0f)
         )
     )

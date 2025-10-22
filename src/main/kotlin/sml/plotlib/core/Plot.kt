@@ -63,9 +63,9 @@ class Plot(
 //        yAxis.updateRange(series.y)
 //    }
 
-    fun addSeries(name: String, x: MutableList<Double>, y: MutableList<Double>, color: Color? = null) {
+    fun addSeries(name: String, x: List<Double>, y: List<Double>, color: Color? = null) {
         val c = color ?: nextColor()
-        addSeries(Series(name, x, y.toMutableList(), PlotStyle(color = c)))
+        addSeries(Series(name, x.toMutableList(), y.toMutableList(), PlotStyle(color = c)))
     }
 
 //    fun getSeries(): List<Series> = seriesList.toList()
@@ -78,7 +78,14 @@ class Plot(
     }
 
     fun save(path: String, width: Int = 800, height: Int = 600) {
-        Renderer(this).save(path, width, height)
+        when {
+            path.endsWith(".svg", ignoreCase = true) -> SVGRenderer(this).save(path, width, height)
+            else -> Renderer(this).save(path, width, height)
+        }
+    }
+
+    fun saveSVG(path: String, width: Int = 800, height: Int = 600) {
+        SVGRenderer(this).save(path, width, height)
     }
 }
 
