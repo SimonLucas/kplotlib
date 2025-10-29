@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="90" y="60" width="540" height="480"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="rgb(250,250,245)"/>
+  <rect x="90" y="60" width="540" height="480" fill="none" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <line x1="90.0" y1="540" x2="90.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">0</text>
+  <line x1="198.0" y1="540" x2="198.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="198.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">20</text>
+  <line x1="306.0" y1="540" x2="306.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="306.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">40</text>
+  <line x1="414.0" y1="540" x2="414.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="414.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">60</text>
+  <line x1="522.0" y1="540" x2="522.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="522.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">80</text>
+  <line x1="630.0" y1="540" x2="630.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="630.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">100</text>
+  <line x1="85" y1="540.0" x2="90" y2="540.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="540.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">0</text>
+  <line x1="85" y1="443.979528581517" x2="90" y2="443.979528581517" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="443.979528581517" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">20</text>
+  <line x1="85" y1="347.95905716303395" x2="90" y2="347.95905716303395" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="347.95905716303395" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">40</text>
+  <line x1="85" y1="251.9385857445509" x2="90" y2="251.9385857445509" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="251.9385857445509" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">60</text>
+  <line x1="85" y1="155.9181143260679" x2="90" y2="155.9181143260679" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="155.9181143260679" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">80</text>
+  <line x1="85" y1="59.897642907584896" x2="90" y2="59.897642907584896" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80" y="59.897642907584896" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">100</text>
+  <text x="360" y="580" text-anchor="middle" font-family="SansSerif" font-size="16" font-weight="bold" fill="rgb(0,0,0)">Time (seconds)</text>
+  <text x="20" y="300" text-anchor="middle" font-family="SansSerif" font-size="16" font-weight="bold" fill="rgb(0,0,0)" transform="rotate(-90 20 300)">Value</text>
+  <text x="360" y="30" text-anchor="middle" font-family="SansSerif" font-size="22" font-weight="bold" fill="rgb(0,0,0)">Custom Theme with Large Fonts</text>
+  <path d="M 90.0 299.94882145379245 L 95.4 275.9836921294268 L 100.8 252.2580144554516 L 106.2 229.00884756051903 L 111.6 206.46848943509036 L 117.0 184.86215588670314 L 122.4 164.40573025806856 L 127.80000000000001 145.30360639207254 L 133.2 127.74664639606158 L 138.6 111.91027361075635 L 144.0 97.95271983821891 L 149.4 86.01344434199046 L 154.8 76.21174041622965 L 160.2 68.64554344655 L 165.60000000000002 63.39045237202055 L 171.0 60.49897432555565 L 176.4 60.0 L 181.8 61.89851498187585 L 187.2 66.17554993704954 L 192.6 72.78837014604903 L 198.0 81.67090249525359 L 203.39999999999998 92.73439565760486 L 208.8 105.86830686652928 L 214.2 120.941406422721 L 219.6 137.80308889791888 L 225.0 156.2848779345619 L 230.4 176.2021096058632 L 235.8 197.35577751672457 L 241.20000000000002 219.5345212098535 L 246.6 242.51673800958645 L 252.0 266.072797202571 L 257.4 289.967334431949 L 262.8 313.96160338020843 L 268.20000000000005 337.8158612434689 L 273.6 361.29176416233 L 279.0 384.1547486749283 L 284.4 406.17637539751195 L 289.8 427.13661151525076 L 295.2 446.8260292773891 L 300.6 465.047898530104 L 306.0 481.6201523791713 L 311.4 496.3772063421902 L 316.79999999999995 509.17161281399547 L 322.2 519.8755343143894 L 327.6 528.3820207979861 L 333.0 534.6060782637119 L 338.4 538.4855179867694 L 343.79999999999995 539.9815778878179 L 349.2 539.0793098308578 L 354.6 535.7877289800641 L 360.0 530.1397237232461 L 365.4 522.1917270619473 L 370.8 512.0231527515492 L 376.2 499.7356018252775 L 381.6 485.45184743026334 L 387.0 469.31460811884 L 392.40000000000003 451.48512185194505 L 397.79999999999995 432.1415349627131 L 403.2 411.4771221772013 L 408.59999999999997 389.69835547721607 L 414.0 367.0228411005203 L 419.4 343.67714529123737 L 424.8 319.89453052483304 L 430.2 295.9126248265654 L 435.6 271.97104747080806 L 441.0 248.30901478446617 L 446.40000000000003 225.16294997651346 L 451.8 202.76412087543946 L 457.20000000000005 181.33632917755324 L 462.59999999999997 161.09367429441437 L 468.0 142.23841414228275 L 473.4 124.9589442478781 L 478.8 109.4279153625522 L 484.2 95.80050839305142 L 489.6 84.21288388519338 L 495.0 74.78082155270101 L 500.4 67.59856344457535 L 505.8 62.73787230969401 L 511.2 60.247314567145736 L 516.6 60.15177504662512 L 522.0 62.45220834744015 L 527.4000000000001 67.12562930047119 L 532.8 74.12534262838312 L 538.2 83.38140950940095 L 543.5999999999999 94.80134638289854 L 549.0 108.27104901456522 L 554.4 123.65593258819695 L 559.8 140.8022764326928 L 565.2 159.53875994818566 L 570.6 179.6781743848469 L 576.0 201.0192933708309 L 581.4000000000001 223.3488834996657 L 586.8 246.4438348879654 L 592.2 270.0733904156334 L 597.5999999999999 294.0014513747302 L 603.0 317.98893648971773 L 608.4 341.79617073853603 L 613.8 365.1852801061952 L 619.2 387.9225683433058 L 624.6 409.78085198175074 L 630.0 430.5417302768027" fill="none" stroke="rgb(0,100,200)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="650" y="80" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">Legend</text>
+  <line x1="650" y1="85" x2="680" y2="85" stroke="rgb(0,100,200)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="690" y="92" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">Signal</text>
+</svg>

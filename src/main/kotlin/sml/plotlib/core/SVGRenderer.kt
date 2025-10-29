@@ -12,10 +12,11 @@ import kotlin.math.abs
  */
 class SVGRenderer(private val plot: Plot) {
 
-    private val marginLeft = 80
-    private val marginRight = 160
-    private val marginTop = 60
-    private val marginBottom = 60
+    private val theme = plot.theme
+    private val marginLeft get() = theme.margins.left
+    private val marginRight get() = theme.margins.right
+    private val marginTop get() = theme.margins.top
+    private val marginBottom get() = theme.margins.bottom
 
     fun save(path: String, width: Int = 800, height: Int = 600) {
         val svg = buildSVG(width, height)
@@ -40,7 +41,8 @@ class SVGRenderer(private val plot: Plot) {
         sb.appendLine("""  </defs>""")
 
         // Background
-        sb.appendLine("""  <rect x="0" y="0" width="$width" height="$height" fill="white"/>""")
+        val bgColor = colorToRGB(theme.colors.background)
+        sb.appendLine("""  <rect x="0" y="0" width="$width" height="$height" fill="$bgColor"/>""")
 
         if (plotW <= 0 || plotH <= 0) {
             sb.appendLine("</svg>")
@@ -146,39 +148,44 @@ class SVGRenderer(private val plot: Plot) {
         yMin: Double,
         yMax: Double
     ) {
+        val borderColor = colorToRGB(theme.colors.axisBorder)
+        val textColor = colorToRGB(theme.colors.foreground)
+
         // Border
-        sb.appendLine("""  <rect x="$originX" y="$marginTop" width="$plotW" height="$plotH" fill="none" stroke="black" stroke-width="1"/>""")
+        sb.appendLine("""  <rect x="$originX" y="$marginTop" width="$plotW" height="$plotH" fill="none" stroke="$borderColor" stroke-width="1"/>""")
 
         // X-axis ticks
         for (tx in plot.xAxis.ticks()) {
             val sx = (tx - xMin) / (xMax - xMin) * plotW + marginLeft
-            sb.appendLine("""  <line x1="$sx" y1="$originY" x2="$sx" y2="${originY + 5}" stroke="black" stroke-width="1"/>""")
-            val label = "%.2f".format(tx)
-            sb.appendLine("""  <text x="$sx" y="${originY + 20}" text-anchor="middle" font-family="SansSerif" font-size="12">$label</text>""")
+            sb.appendLine("""  <line x1="$sx" y1="$originY" x2="$sx" y2="${originY + 5}" stroke="$textColor" stroke-width="1"/>""")
+            val label = AxisFormatter.format(tx, theme.axisFormat)
+            sb.appendLine("""  <text x="$sx" y="${originY + 20}" text-anchor="middle" font-family="${theme.fonts.family}" font-size="${theme.fonts.tickSize}" fill="$textColor">$label</text>""")
         }
 
         // Y-axis ticks
         for (ty in plot.yAxis.ticks()) {
             val sy = height - marginBottom - (ty - yMin) / (yMax - yMin) * plotH
-            sb.appendLine("""  <line x1="${originX - 5}" y1="$sy" x2="$originX" y2="$sy" stroke="black" stroke-width="1"/>""")
-            val label = "%.2f".format(ty)
-            sb.appendLine("""  <text x="${originX - 10}" y="$sy" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12">$label</text>""")
+            sb.appendLine("""  <line x1="${originX - 5}" y1="$sy" x2="$originX" y2="$sy" stroke="$textColor" stroke-width="1"/>""")
+            val label = AxisFormatter.format(ty, theme.axisFormat)
+            sb.appendLine("""  <text x="${originX - 10}" y="$sy" text-anchor="end" dominant-baseline="middle" font-family="${theme.fonts.family}" font-size="${theme.fonts.tickSize}" fill="$textColor">$label</text>""")
         }
 
         // X-axis label
         val xLabelX = originX + plotW / 2
         val xLabelY = height - 20
-        sb.appendLine("""  <text x="$xLabelX" y="$xLabelY" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold">${escapeXML(plot.xlabel)}</text>""")
+        val labelWeight = if (theme.fonts.labelStyle == Font.BOLD) "bold" else "normal"
+        sb.appendLine("""  <text x="$xLabelX" y="$xLabelY" text-anchor="middle" font-family="${theme.fonts.family}" font-size="${theme.fonts.labelSize}" font-weight="$labelWeight" fill="$textColor">${escapeXML(plot.xlabel)}</text>""")
 
         // Y-axis label (rotated)
         val yLabelX = 20
         val yLabelY = height / 2
-        sb.appendLine("""  <text x="$yLabelX" y="$yLabelY" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold" transform="rotate(-90 $yLabelX $yLabelY)">${escapeXML(plot.ylabel)}</text>""")
+        sb.appendLine("""  <text x="$yLabelX" y="$yLabelY" text-anchor="middle" font-family="${theme.fonts.family}" font-size="${theme.fonts.labelSize}" font-weight="$labelWeight" fill="$textColor" transform="rotate(-90 $yLabelX $yLabelY)">${escapeXML(plot.ylabel)}</text>""")
 
         // Title
         val titleX = originX + plotW / 2
         val titleY = 30
-        sb.appendLine("""  <text x="$titleX" y="$titleY" text-anchor="middle" font-family="SansSerif" font-size="16" font-weight="bold">${escapeXML(plot.title)}</text>""")
+        val titleWeight = if (theme.fonts.titleStyle == Font.BOLD) "bold" else "normal"
+        sb.appendLine("""  <text x="$titleX" y="$titleY" text-anchor="middle" font-family="${theme.fonts.family}" font-size="${theme.fonts.titleSize}" font-weight="$titleWeight" fill="$textColor">${escapeXML(plot.title)}</text>""")
     }
 
     private fun drawLegend(sb: StringBuilder, width: Int, height: Int) {
@@ -188,8 +195,9 @@ class SVGRenderer(private val plot: Plot) {
         val legendX = width - marginRight + 20
         val legendY = marginTop + 30
         val entryH = 20
+        val textColor = colorToRGB(theme.colors.foreground)
 
-        sb.appendLine("""  <text x="$legendX" y="${legendY - 10}" font-family="SansSerif" font-size="12" fill="black">Legend</text>""")
+        sb.appendLine("""  <text x="$legendX" y="${legendY - 10}" font-family="${theme.fonts.family}" font-size="${theme.fonts.legendSize}" fill="$textColor">Legend</text>""")
 
         for ((i, s) in series.withIndex()) {
             val y = legendY + i * entryH
@@ -207,7 +215,7 @@ class SVGRenderer(private val plot: Plot) {
             }
 
             // Label
-            sb.appendLine("""  <text x="${legendX + 40}" y="${y + 2}" font-family="SansSerif" font-size="12" fill="black">${escapeXML(s.name)}</text>""")
+            sb.appendLine("""  <text x="${legendX + 40}" y="${y + 2}" font-family="${theme.fonts.family}" font-size="${theme.fonts.legendSize}" fill="$textColor">${escapeXML(s.name)}</text>""")
         }
     }
 

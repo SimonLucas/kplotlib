@@ -7,31 +7,20 @@ import javax.swing.JFrame
 /**
  * Represents a single 2D plot with axes, labels, and data series.
  */
-class Plot(
+class Plot @JvmOverloads constructor(
     var title: String = "",
     var xlabel: String = "",
-    var ylabel: String = ""
+    var ylabel: String = "",
+    var theme: Theme = Theme.getDefault()
 ) {
     private val seriesList = mutableListOf<Series>()
     val xAxis = Axis(xlabel)
     val yAxis = Axis(ylabel)
 
     private var colorIndex = 0
-    private val colorCycle = listOf(
-        Color(31, 119, 180), // blue
-        Color(255, 127, 14), // orange
-        Color(44, 160, 44),  // green
-        Color(214, 39, 40),  // red
-        Color(148, 103, 189),// purple
-        Color(140, 86, 75),  // brown
-        Color(227, 119, 194),// pink
-        Color(127, 127, 127),// gray
-        Color(188, 189, 34), // olive
-        Color(23, 190, 207)  // cyan
-    )
 
     private fun nextColor(): Color {
-        val color = colorCycle[colorIndex % colorCycle.size]
+        val color = theme.colors.getSeriesColor(colorIndex)
         colorIndex++
         return color
     }
@@ -77,6 +66,7 @@ class Plot(
         Renderer(this).display()
     }
 
+    @JvmOverloads
     fun save(path: String, width: Int = 800, height: Int = 600) {
         when {
             path.endsWith(".svg", ignoreCase = true) -> SVGRenderer(this).save(path, width, height)

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="100" y="80" width="520" height="440"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="rgb(255,255,255)"/>
+  <rect x="100" y="80" width="520" height="440" fill="none" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <line x1="100.0" y1="520" x2="100.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="100.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">0</text>
+  <line x1="204.0" y1="520" x2="204.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="204.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">20</text>
+  <line x1="308.0" y1="520" x2="308.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="308.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">40</text>
+  <line x1="412.0" y1="520" x2="412.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="412.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">60</text>
+  <line x1="516.0" y1="520" x2="516.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="516.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">80</text>
+  <line x1="620.0" y1="520" x2="620.0" y2="525" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="620.0" y="540" text-anchor="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">100</text>
+  <line x1="95" y1="520.0" x2="100" y2="520.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90" y="520.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">0</text>
+  <line x1="95" y1="410.0" x2="100" y2="410.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90" y="410.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">50</text>
+  <line x1="95" y1="300.0" x2="100" y2="300.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90" y="300.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">100</text>
+  <line x1="95" y1="190.0" x2="100" y2="190.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90" y="190.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">150</text>
+  <line x1="95" y1="80.0" x2="100" y2="80.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="90" y="80.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">200</text>
+  <text x="360" y="580" text-anchor="middle" font-family="SansSerif" font-size="18" font-weight="bold" fill="rgb(0,0,0)">X Values</text>
+  <text x="20" y="300" text-anchor="middle" font-family="SansSerif" font-size="18" font-weight="bold" fill="rgb(0,0,0)" transform="rotate(-90 20 300)">Y Values</text>
+  <text x="360" y="30" text-anchor="middle" font-family="SansSerif" font-size="20" font-weight="bold" fill="rgb(0,0,0)">Presentation Theme Example</text>
+  <path d="M 100.0 520.0 L 110.4 515.6 L 120.8 511.2 L 131.2 506.8 L 141.6 502.4 L 152.0 498.0 L 162.4 493.6 L 172.8 489.2 L 183.2 484.8 L 193.6 480.4 L 204.0 476.0 L 214.4 471.6 L 224.8 467.2 L 235.20000000000002 462.8 L 245.60000000000002 458.4 L 256.0 454.0 L 266.4 449.6 L 276.8 445.2 L 287.2 440.8 L 297.6 436.4 L 308.0 432.0 L 318.4 427.6 L 328.8 423.2 L 339.20000000000005 418.8 L 349.6 414.4 L 360.0 410.0 L 370.40000000000003 405.6 L 380.8 401.2 L 391.20000000000005 396.79999999999995 L 401.59999999999997 392.4 L 412.0 388.0 L 422.4 383.6 L 432.8 379.2 L 443.2 374.79999999999995 L 453.6 370.4 L 464.0 366.0 L 474.4 361.6 L 484.8 357.2 L 495.2 352.8 L 505.6 348.4 L 516.0 344.0 L 526.4 339.6 L 536.8 335.20000000000005 L 547.2 330.8 L 557.6 326.4 L 568.0 322.0 L 578.4000000000001 317.6 L 588.8 313.20000000000005 L 599.2 308.8 L 609.5999999999999 304.4 L 620.0 300.0" fill="none" stroke="rgb(31,119,180)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 100.0 520.0 L 110.4 513.4 L 120.8 506.8 L 131.2 500.2 L 141.6 493.6 L 152.0 487.0 L 162.4 480.4 L 172.8 473.8 L 183.2 467.2 L 193.6 460.6 L 204.0 454.0 L 214.4 447.4 L 224.8 440.8 L 235.20000000000002 434.2 L 245.60000000000002 427.6 L 256.0 421.0 L 266.4 414.4 L 276.8 407.8 L 287.2 401.2 L 297.6 394.6 L 308.0 388.0 L 318.4 381.4 L 328.8 374.79999999999995 L 339.20000000000005 368.20000000000005 L 349.6 361.6 L 360.0 355.0 L 370.40000000000003 348.4 L 380.8 341.79999999999995 L 391.20000000000005 335.20000000000005 L 401.59999999999997 328.6 L 412.0 322.0 L 422.4 315.4 L 432.8 308.8 L 443.2 302.2 L 453.6 295.6 L 464.0 289.0 L 474.4 282.4 L 484.8 275.79999999999995 L 495.2 269.20000000000005 L 505.6 262.6 L 516.0 256.0 L 526.4 249.39999999999998 L 536.8 242.8 L 547.2 236.2 L 557.6 229.59999999999997 L 568.0 223.0 L 578.4000000000001 216.40000000000003 L 588.8 209.8 L 599.2 203.2 L 609.5999999999999 196.60000000000002 L 620.0 190.0" fill="none" stroke="rgb(255,127,14)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 100.0 520.0 L 110.4 519.824 L 120.8 519.296 L 131.2 518.416 L 141.6 517.184 L 152.0 515.6 L 162.4 513.664 L 172.8 511.376 L 183.2 508.736 L 193.6 505.74399999999997 L 204.0 502.4 L 214.4 498.704 L 224.8 494.656 L 235.20000000000002 490.25600000000003 L 245.60000000000002 485.504 L 256.0 480.4 L 266.4 474.944 L 276.8 469.13599999999997 L 287.2 462.976 L 297.6 456.464 L 308.0 449.6 L 318.4 442.384 L 328.8 434.81600000000003 L 339.20000000000005 426.896 L 349.6 418.624 L 360.0 410.0 L 370.40000000000003 401.024 L 380.8 391.696 L 391.20000000000005 382.01599999999996 L 401.59999999999997 371.984 L 412.0 361.6 L 422.4 350.86400000000003 L 432.8 339.77599999999995 L 443.2 328.336 L 453.6 316.544 L 464.0 304.4 L 474.4 291.904 L 484.8 279.05600000000004 L 495.2 265.856 L 505.6 252.30399999999997 L 516.0 238.39999999999998 L 526.4 224.144 L 536.8 209.536 L 547.2 194.57600000000002 L 557.6 179.264 L 568.0 163.59999999999997 L 578.4000000000001 147.584 L 588.8 131.216 L 599.2 114.49600000000004 L 609.5999999999999 97.42399999999998 L 620.0 80.0" fill="none" stroke="rgb(44,160,44)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="100" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">Legend</text>
+  <line x1="640" y1="105" x2="670" y2="105" stroke="rgb(31,119,180)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="680" y="112" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">Linear</text>
+  <line x1="640" y1="125" x2="670" y2="125" stroke="rgb(255,127,14)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="680" y="132" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">Linear ×1.5</text>
+  <line x1="640" y1="145" x2="670" y2="145" stroke="rgb(44,160,44)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="680" y="152" font-family="SansSerif" font-size="14" fill="rgb(0,0,0)">Quadratic</text>
+</svg>

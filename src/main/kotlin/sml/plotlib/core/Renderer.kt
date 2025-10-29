@@ -24,10 +24,11 @@ import javax.swing.JPanel
  */
 class Renderer(private val plot: Plot) {
 
-    private val marginLeft = 80
-    private val marginRight = 160
-    private val marginTop = 60
-    private val marginBottom = 60
+    private val theme = plot.theme
+    private val marginLeft get() = theme.margins.left
+    private val marginRight get() = theme.margins.right
+    private val marginTop get() = theme.margins.top
+    private val marginBottom get() = theme.margins.bottom
 
     // ---------------- Entry points ----------------
 
@@ -64,7 +65,7 @@ class Renderer(private val plot: Plot) {
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY)
 
         // --- Background ---
-        g2d.color = Color.WHITE
+        g2d.color = theme.colors.background
         g2d.fillRect(0, 0, width, height)
 
         // --- Compute bounds ---
@@ -169,22 +170,18 @@ class Renderer(private val plot: Plot) {
         yMax: Double
     ) {
         // Border
-        g2d.color = Color.BLACK
+        g2d.color = theme.colors.axisBorder
         g2d.stroke = BasicStroke(1f)
         g2d.draw(Rectangle2D.Double(originX.toDouble(), marginTop.toDouble(), plotW.toDouble(), plotH.toDouble()))
 
-        // Fonts
-        val tickFont = Font("SansSerif", Font.PLAIN, 12)
-        val labelFont = Font("SansSerif", Font.BOLD, 14)
-        val titleFont = Font("SansSerif", Font.BOLD, 16)
-
         // X-axis ticks
-        g2d.font = tickFont
+        g2d.color = theme.colors.foreground
+        g2d.font = theme.fonts.tickFont()
         val fm = g2d.fontMetrics
         for (tx in plot.xAxis.ticks()) {
             val sx = ((tx - xMin) / (xMax - xMin) * plotW + marginLeft)
             g2d.draw(Line2D.Double(sx, originY.toDouble(), sx, originY + 5.0))
-            val label = "%.2f".format(tx)
+            val label = AxisFormatter.format(tx, theme.axisFormat)
             g2d.drawString(label, (sx - fm.stringWidth(label) / 2).toFloat(), (originY + 20).toFloat())
         }
 
@@ -192,12 +189,12 @@ class Renderer(private val plot: Plot) {
         for (ty in plot.yAxis.ticks()) {
             val sy = (height - marginBottom - (ty - yMin) / (yMax - yMin) * plotH)
             g2d.draw(Line2D.Double(originX - 5.0, sy, originX.toDouble(), sy))
-            val label = "%.2f".format(ty)
+            val label = AxisFormatter.format(ty, theme.axisFormat)
             g2d.drawString(label, (originX - fm.stringWidth(label) - 10).toFloat(), (sy + fm.ascent / 2).toFloat())
         }
 
         // Axis labels
-        g2d.font = labelFont
+        g2d.font = theme.fonts.labelFont()
         val fml = g2d.fontMetrics
         g2d.drawString(plot.xlabel, (originX + plotW / 2 - fml.stringWidth(plot.xlabel) / 2).toFloat(), (height - 20).toFloat())
         g2d.rotate(-Math.PI / 2)
@@ -205,7 +202,7 @@ class Renderer(private val plot: Plot) {
         g2d.rotate(Math.PI / 2)
 
         // Title
-        g2d.font = titleFont
+        g2d.font = theme.fonts.titleFont()
         val fmt = g2d.fontMetrics
         g2d.drawString(plot.title, (originX + plotW / 2 - fmt.stringWidth(plot.title) / 2).toFloat(), 30f)
     }
@@ -220,9 +217,9 @@ class Renderer(private val plot: Plot) {
         val legendY = marginTop + 30
         val entryH = 20
 
-        g2d.font = Font("SansSerif", Font.PLAIN, 12)
+        g2d.font = theme.fonts.legendFont()
         val fm = g2d.fontMetrics
-        g2d.color = Color.BLACK
+        g2d.color = theme.colors.foreground
         g2d.drawString("Legend", legendX.toFloat(), (legendY - 10).toFloat())
 
         for ((i, s) in series.withIndex()) {
@@ -233,7 +230,7 @@ class Renderer(private val plot: Plot) {
             if (s.style.showPoints) {
                 g2d.fill(Ellipse2D.Double((legendX + 12).toDouble(), (y - 8).toDouble(), 6.0, 6.0))
             }
-            g2d.color = Color.BLACK
+            g2d.color = theme.colors.foreground
             g2d.drawString(s.name, (legendX + 40).toFloat(), (y - 2 + fm.ascent / 2).toFloat())
         }
     }

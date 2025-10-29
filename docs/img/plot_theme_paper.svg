@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="70" y="50" width="590" height="500"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="rgb(255,255,255)"/>
+  <rect x="70" y="50" width="590" height="500" fill="none" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <line x1="70.0" y1="550" x2="70.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">0</text>
+  <line x1="188.0" y1="550" x2="188.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="188.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">20</text>
+  <line x1="306.0" y1="550" x2="306.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="306.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">40</text>
+  <line x1="424.0" y1="550" x2="424.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="424.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">60</text>
+  <line x1="542.0" y1="550" x2="542.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="542.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">80</text>
+  <line x1="660.0" y1="550" x2="660.0" y2="555" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="660.0" y="570" text-anchor="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">100</text>
+  <line x1="65" y1="550.0" x2="70" y2="550.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="60" y="550.0" text-anchor="end" dominant-baseline="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">0</text>
+  <line x1="65" y1="425.0" x2="70" y2="425.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="60" y="425.0" text-anchor="end" dominant-baseline="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">50</text>
+  <line x1="65" y1="300.0" x2="70" y2="300.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="60" y="300.0" text-anchor="end" dominant-baseline="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">100</text>
+  <line x1="65" y1="175.0" x2="70" y2="175.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="60" y="175.0" text-anchor="end" dominant-baseline="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">150</text>
+  <line x1="65" y1="50.0" x2="70" y2="50.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="60" y="50.0" text-anchor="end" dominant-baseline="middle" font-family="Serif" font-size="10" fill="rgb(0,0,0)">200</text>
+  <text x="365" y="580" text-anchor="middle" font-family="Serif" font-size="12" font-weight="bold" fill="rgb(0,0,0)">X Values</text>
+  <text x="20" y="300" text-anchor="middle" font-family="Serif" font-size="12" font-weight="bold" fill="rgb(0,0,0)" transform="rotate(-90 20 300)">Y Values</text>
+  <text x="365" y="30" text-anchor="middle" font-family="Serif" font-size="14" font-weight="bold" fill="rgb(0,0,0)">Paper Theme Example</text>
+  <path d="M 70.0 550.0 L 81.8 545.0 L 93.6 540.0 L 105.4 535.0 L 117.2 530.0 L 129.0 525.0 L 140.8 520.0 L 152.60000000000002 515.0 L 164.4 510.0 L 176.2 505.0 L 188.0 500.0 L 199.8 495.0 L 211.6 490.0 L 223.4 485.0 L 235.20000000000002 480.0 L 247.0 475.0 L 258.8 470.0 L 270.6 465.0 L 282.4 460.0 L 294.2 455.0 L 306.0 450.0 L 317.79999999999995 445.0 L 329.6 440.0 L 341.40000000000003 435.0 L 353.2 430.0 L 365.0 425.0 L 376.8 420.0 L 388.6 415.0 L 400.40000000000003 410.0 L 412.2 405.0 L 424.0 400.0 L 435.8 395.0 L 447.6 390.0 L 459.40000000000003 385.0 L 471.20000000000005 380.0 L 483.0 375.0 L 494.8 370.0 L 506.6 365.0 L 518.4 360.0 L 530.2 355.0 L 542.0 350.0 L 553.8 345.0 L 565.5999999999999 340.0 L 577.4 335.0 L 589.2 330.0 L 601.0 325.0 L 612.8000000000001 320.0 L 624.6 315.0 L 636.4 310.0 L 648.2 305.0 L 660.0 300.0" fill="none" stroke="rgb(0,0,0)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 70.0 550.0 L 81.8 542.5 L 93.6 535.0 L 105.4 527.5 L 117.2 520.0 L 129.0 512.5 L 140.8 505.0 L 152.60000000000002 497.5 L 164.4 490.0 L 176.2 482.5 L 188.0 475.0 L 199.8 467.5 L 211.6 460.0 L 223.4 452.5 L 235.20000000000002 445.0 L 247.0 437.5 L 258.8 430.0 L 270.6 422.5 L 282.4 415.0 L 294.2 407.5 L 306.0 400.0 L 317.79999999999995 392.5 L 329.6 385.0 L 341.40000000000003 377.5 L 353.2 370.0 L 365.0 362.5 L 376.8 355.0 L 388.6 347.5 L 400.40000000000003 340.0 L 412.2 332.5 L 424.0 325.0 L 435.8 317.5 L 447.6 310.0 L 459.40000000000003 302.5 L 471.20000000000005 295.0 L 483.0 287.5 L 494.8 280.0 L 506.6 272.5 L 518.4 265.0 L 530.2 257.5 L 542.0 250.0 L 553.8 242.5 L 565.5999999999999 235.0 L 577.4 227.5 L 589.2 220.0 L 601.0 212.5 L 612.8000000000001 205.0 L 624.6 197.5 L 636.4 190.0 L 648.2 182.5 L 660.0 175.0" fill="none" stroke="rgb(100,100,100)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 70.0 550.0 L 81.8 549.8 L 93.6 549.2 L 105.4 548.2 L 117.2 546.8 L 129.0 545.0 L 140.8 542.8 L 152.60000000000002 540.2 L 164.4 537.2 L 176.2 533.8 L 188.0 530.0 L 199.8 525.8 L 211.6 521.2 L 223.4 516.2 L 235.20000000000002 510.8 L 247.0 505.0 L 258.8 498.8 L 270.6 492.2 L 282.4 485.2 L 294.2 477.8 L 306.0 470.0 L 317.79999999999995 461.8 L 329.6 453.2 L 341.40000000000003 444.2 L 353.2 434.8 L 365.0 425.0 L 376.8 414.8 L 388.6 404.2 L 400.40000000000003 393.20000000000005 L 412.2 381.79999999999995 L 424.0 370.0 L 435.8 357.8 L 447.6 345.2 L 459.40000000000003 332.2 L 471.20000000000005 318.79999999999995 L 483.0 305.0 L 494.8 290.79999999999995 L 506.6 276.2 L 518.4 261.2 L 530.2 245.79999999999995 L 542.0 230.0 L 553.8 213.8 L 565.5999999999999 197.2 L 577.4 180.20000000000005 L 589.2 162.8 L 601.0 145.0 L 612.8000000000001 126.79999999999995 L 624.6 108.20000000000005 L 636.4 89.19999999999999 L 648.2 69.80000000000001 L 660.0 50.0" fill="none" stroke="rgb(150,150,150)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="680" y="70" font-family="Serif" font-size="10" fill="rgb(0,0,0)">Legend</text>
+  <line x1="680" y1="75" x2="710" y2="75" stroke="rgb(0,0,0)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="720" y="82" font-family="Serif" font-size="10" fill="rgb(0,0,0)">Linear</text>
+  <line x1="680" y1="95" x2="710" y2="95" stroke="rgb(100,100,100)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="720" y="102" font-family="Serif" font-size="10" fill="rgb(0,0,0)">Linear ×1.5</text>
+  <line x1="680" y1="115" x2="710" y2="115" stroke="rgb(150,150,150)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="720" y="122" font-family="Serif" font-size="10" fill="rgb(0,0,0)">Quadratic</text>
+</svg>

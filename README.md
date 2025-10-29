@@ -1,6 +1,7 @@
 # 🧩 KPlotLib (kplotlib)
 
-A lightweight, dependency-free 2D plotting library for **Kotlin (JVM)** — inspired by Matplotlib, written in pure Java2D.
+A lightweight, dependency-free 2D plotting library for **Kotlin (JVM)** — 
+inspired by Matplotlib, written in Kotlin using Java2D graphics.
 
 ---
 
@@ -16,6 +17,9 @@ A lightweight, dependency-free 2D plotting library for **Kotlin (JVM)** — insp
 - ✅ Auto-resizing and optional auto-scaling axes
 - ✅ No dependencies beyond the Kotlin standard library
 - ✅ Output to .svg or .png, and can be run headless
+- ✅ Themes to control rendering e.g. see Dark Theme below
+- ✅ Includes examples of using from Java
+
 
 ---
 
@@ -70,3 +74,6 @@ Example output (direct to .svg file - smoother than .png)
 
 ![Figure](./docs/img/example-error-regions.svg)
 
+Example using a different theme:
+
+![Figure](./docs/img/plot_theme_dark.svg)

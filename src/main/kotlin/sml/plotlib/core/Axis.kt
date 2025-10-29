@@ -22,10 +22,14 @@ data class Axis(
         seriesCount++
     }
 
-    fun ticks(count: Int = 6): List<Double> {
-        if (max == min) return listOf(min)
-        val step = (max - min) / (count - 1)
-        return List(count) { i -> min + i * step }
+    fun ticks(count: Int = 6, useCleanTicks: Boolean = true): List<Double> {
+        return if (useCleanTicks) {
+            AxisFormatter.generateCleanTicks(min, max, count)
+        } else {
+            if (max == min) return listOf(min)
+            val step = (max - min) / (count - 1)
+            List(count) { i -> min + i * step }
+        }
     }
 
     companion object {

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="plotClip">
+      <rect x="80" y="60" width="560" height="480"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="rgb(255,255,255)"/>
+  <rect x="80" y="60" width="560" height="480" fill="none" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <line x1="80.0" y1="540" x2="80.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="80.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">0</text>
+  <line x1="220.0" y1="540" x2="220.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="220.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">500</text>
+  <line x1="360.0" y1="540" x2="360.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="360.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">1000</text>
+  <line x1="500.0" y1="540" x2="500.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="500.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">1500</text>
+  <line x1="640.0" y1="540" x2="640.0" y2="545" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="640.0" y="560" text-anchor="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">2000</text>
+  <line x1="75" y1="540.0" x2="80" y2="540.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70" y="540.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">0</text>
+  <line x1="75" y1="420.0" x2="80" y2="420.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70" y="420.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">1000</text>
+  <line x1="75" y1="300.0" x2="80" y2="300.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70" y="300.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">2000</text>
+  <line x1="75" y1="180.0" x2="80" y2="180.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70" y="180.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">3000</text>
+  <line x1="75" y1="60.0" x2="80" y2="60.0" stroke="rgb(0,0,0)" stroke-width="1"/>
+  <text x="70" y="60.0" text-anchor="end" dominant-baseline="middle" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">4000</text>
+  <text x="360" y="580" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold" fill="rgb(0,0,0)">X Values (0 to 2000)</text>
+  <text x="20" y="300" text-anchor="middle" font-family="SansSerif" font-size="14" font-weight="bold" fill="rgb(0,0,0)" transform="rotate(-90 20 300)">Y Values</text>
+  <text x="360" y="30" text-anchor="middle" font-family="SansSerif" font-size="16" font-weight="bold" fill="rgb(0,0,0)">Clean Axis Formatting Demo</text>
+  <path d="M 80.0 540.0 L 85.6 539.952 L 91.2 539.808 L 96.8 539.568 L 102.4 539.232 L 108.0 538.8 L 113.6 538.272 L 119.2 537.648 L 124.80000000000001 536.928 L 130.4 536.112 L 136.0 535.2 L 141.6 534.192 L 147.2 533.088 L 152.8 531.888 L 158.4 530.592 L 164.0 529.2 L 169.60000000000002 527.712 L 175.2 526.128 L 180.8 524.448 L 186.4 522.672 L 192.0 520.8 L 197.6 518.832 L 203.2 516.768 L 208.8 514.608 L 214.4 512.352 L 220.0 510.0 L 225.6 507.552 L 231.20000000000002 505.008 L 236.8 502.368 L 242.39999999999998 499.632 L 248.0 496.8 L 253.6 493.872 L 259.20000000000005 490.848 L 264.8 487.728 L 270.4 484.512 L 276.0 481.2 L 281.6 477.79200000000003 L 287.2 474.288 L 292.8 470.688 L 298.4 466.992 L 304.0 463.2 L 309.6 459.312 L 315.2 455.328 L 320.79999999999995 451.248 L 326.4 447.072 L 332.0 442.8 L 337.6 438.432 L 343.2 433.96799999999996 L 348.8 429.408 L 354.4 424.752 L 360.0 420.0 L 365.6 415.152 L 371.2 410.208 L 376.8 405.168 L 382.40000000000003 400.032 L 388.0 394.8 L 393.6 389.472 L 399.2 384.048 L 404.79999999999995 378.528 L 410.4 372.912 L 416.0 367.20000000000005 L 421.59999999999997 361.39199999999994 L 427.2 355.48800000000006 L 432.8 349.488 L 438.40000000000003 343.392 L 444.0 337.20000000000005 L 449.6 330.912 L 455.20000000000005 324.528 L 460.8 318.048 L 466.4 311.472 L 472.0 304.8 L 477.59999999999997 298.03200000000004 L 483.2 291.168 L 488.8 284.208 L 494.4 277.152 L 500.0 270.0 L 505.6 262.752 L 511.2 255.40800000000002 L 516.8 247.96800000000002 L 522.4000000000001 240.43200000000002 L 528.0 232.8 L 533.6 225.072 L 539.2 217.248 L 544.8 209.32800000000003 L 550.4 201.312 L 556.0 193.2 L 561.5999999999999 184.99199999999996 L 567.2 176.688 L 572.8 168.288 L 578.4000000000001 159.79199999999997 L 584.0 151.2 L 589.6 142.51199999999994 L 595.2 133.728 L 600.8000000000001 124.84800000000001 L 606.4 115.87199999999996 L 612.0 106.80000000000001 L 617.6 97.632 L 623.1999999999999 88.368 L 628.8 79.00799999999998 L 634.4 69.55200000000002 L 640.0 60.0" fill="none" stroke="rgb(31,119,180)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="660" y="80" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">Legend</text>
+  <line x1="660" y1="85" x2="690" y2="85" stroke="rgb(31,119,180)" stroke-width="2.0" stroke-linecap="round"/>
+  <text x="700" y="92" font-family="SansSerif" font-size="12" fill="rgb(0,0,0)">f(x) = x²/1000</text>
+</svg>
