@@ -1,0 +1,112 @@
+@startuml kplotlib-simplified
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam backgroundColor #FEFEFE
+skinparam shadowing false
+
+title KPlotLib - Simplified Architecture
+
+' ===== Core Components =====
+class Plot <<core>> {
+    title, xlabel, ylabel
+    --
+    + addSeries()
+    + show()
+    + save()
+    + saveSVG()
+}
+
+class Series <<data>> {
+    x, y, yLower, yUpper
+    --
+    Data container with
+    optional error regions
+}
+
+class Axis <<config>> {
+    label, min, max
+    --
+    + updateRange()
+    + ticks()
+}
+
+class Theme <<styling>> {
+    fonts, colors, margins
+    grid, axisFormat
+    --
+    Complete theming system
+}
+
+class PlotStyle <<styling>> {
+    color, lineWidth
+    showPoints, pointRadius
+}
+
+' ===== Rendering =====
+class Renderer <<render>> {
+    + display()
+    + save()
+}
+
+class SVGRenderer <<render>> {
+    + save()
+}
+
+class AnimatedPlotPanel <<animation>> {
+    + start()
+    + pause()
+    + stop()
+}
+
+' ===== Relationships =====
+Plot *-- "2" Axis
+Plot *-- Theme
+Plot o-- "*" Series
+
+Series *-- PlotStyle
+
+Renderer --> Plot
+SVGRenderer --> Plot
+AnimatedPlotPanel --> Plot
+AnimatedPlotPanel --> Renderer
+
+' ===== Grouping =====
+together {
+    Plot
+    Series
+    Axis
+}
+
+together {
+    Theme
+    PlotStyle
+}
+
+together {
+    Renderer
+    SVGRenderer
+    AnimatedPlotPanel
+}
+
+' ===== Notes =====
+note top of Plot
+    **Central Orchestrator**
+    Manages data series,
+    axes, and theme
+end note
+
+note bottom of Theme
+    **5 Sub-themes**
+    FontTheme, ColorTheme,
+    MarginTheme, GridTheme,
+    AxisFormatTheme
+end note
+
+note bottom of AnimatedPlotPanel
+    Extends JPanel
+    Frame-based animation
+end note
+
+@enduml

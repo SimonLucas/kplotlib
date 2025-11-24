@@ -1,0 +1,172 @@
+@startuml kplotlib-rendering-system
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+title KPlotLib - Rendering System Architecture
+
+class Plot <<core>> {
+    - seriesList: MutableList<Series>
+    - xAxis: Axis
+    - yAxis: Axis
+    - theme: Theme
+    --
+    + show()
+    + save(path: String, width: Int, height: Int)
+    + saveSVG(path: String, width: Int, height: Int)
+}
+
+class Renderer {
+    - plot: Plot
+    --
+    **Public API:**
+    + display(initialWidth: Int, initialHeight: Int)
+    + save(path: String, width: Int, height: Int)
+    + draw(g2d: Graphics2D, width: Int, height: Int)
+    ====
+    **Private Rendering:**
+    - drawAxes(g2d, plotArea, xTicks, yTicks)
+    - drawLegend(g2d, plotArea)
+}
+
+class SVGRenderer {
+    - plot: Plot
+    --
+    **Public API:**
+    + save(path: String, width: Int, height: Int)
+    ====
+    **Private Rendering:**
+    - buildSVG(width: Int, height: Int): String
+    - drawAxes(plotArea, xTicks, yTicks): String
+    - drawLegend(plotArea): String
+    - colorToRGB(color: Color): String
+    - colorToRGBA(color, alpha): String
+    - strokeToDashArray(stroke): String
+    - escapeXML(text: String): String
+}
+
+class AnimatedPlotPanel {
+    - plot: Plot
+    - fps: Int
+    - onFrame: (Int, Plot) -> Unit
+    - renderer: Renderer
+    - timer: Timer
+    - frameCount: Int
+    --
+    + start()
+    + pause()
+    + resume()
+    + stop()
+    # paintComponent(g: Graphics)
+}
+
+class "Plot.animate()" as animate_ext <<extension>> {
+    Extension function that creates
+    AnimatedPlotPanel and displays it
+}
+
+' ===== Standard Library Dependencies =====
+interface "Graphics2D" as g2d <<java.awt>> {
+    AWT graphics context
+}
+
+interface "JPanel" as jpanel <<javax.swing>> {
+    Swing component
+}
+
+class "JFrame" as jframe <<javax.swing>> {
+    Window container
+}
+
+class Timer <<javax.swing>> {
+    Frame timer
+}
+
+' ===== Relationships =====
+Plot --> Renderer : delegates to
+Plot --> SVGRenderer : delegates to
+Plot ..> animate_ext : provides
+
+Renderer --> Plot : reads
+SVGRenderer --> Plot : reads
+AnimatedPlotPanel --> Plot : animates
+AnimatedPlotPanel --> Renderer : uses for drawing
+
+Renderer ..> g2d : draws to
+AnimatedPlotPanel --|> jpanel : extends
+AnimatedPlotPanel *-- Timer : uses
+Renderer ..> jframe : creates
+
+animate_ext ..> AnimatedPlotPanel : creates
+
+' ===== Output Formats =====
+package "Output Formats" {
+    class "PNG" as png <<image>> {
+        Raster image output
+        via Renderer.save()
+    }
+
+    class "SVG" as svg <<vector>> {
+        Vector image output
+        via SVGRenderer.save()
+    }
+
+    class "Screen" as screen <<display>> {
+        Interactive window
+        via Renderer.display()
+    }
+
+    class "Animated" as animated <<display>> {
+        Frame-based animation
+        via Plot.animate()
+    }
+
+    Renderer ..> png : produces
+    Renderer ..> screen : produces
+    SVGRenderer ..> svg : produces
+    AnimatedPlotPanel ..> animated : produces
+}
+
+' ===== Rendering Flow =====
+note top of Renderer
+    **Rendering Pipeline (PNG/Screen):**
+    1. Configure Graphics2D (anti-aliasing, hints)
+    2. Fill background
+    3. Calculate plot area from margins
+    4. Draw grid lines
+    5. Draw axes and ticks
+    6. Draw each series (with clipping)
+    7. Draw error regions (if present)
+    8. Draw legend
+    9. Write to file or display in JFrame
+end note
+
+note top of SVGRenderer
+    **SVG Pipeline:**
+    1. Build SVG header with dimensions
+    2. Define clipPath for plot area
+    3. Generate SVG elements for:
+       - Background
+       - Grid
+       - Axes and tick marks
+       - Series paths
+       - Error regions (with opacity)
+       - Legend
+    4. Write XML string to file
+
+    **No Third-Party Dependencies**
+    Pure Kotlin/Java implementation
+end note
+
+note bottom of AnimatedPlotPanel
+    **Animation Loop:**
+    1. Timer fires at specified FPS
+    2. Invoke onFrame callback with current frame
+    3. Callback modifies Plot data
+    4. Trigger repaint
+    5. Renderer draws updated Plot
+    6. Repeat
+end note
+
+@enduml

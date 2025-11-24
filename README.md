@@ -77,3 +77,18 @@ Example output (direct to .svg file - smoother than .png)
 Example using a different theme:
 
 ![Figure](./docs/img/plot_theme_dark.svg)
+
+---
+
+## 🎲 Interactive Example
+
+Click the play button (▶) in IntelliJ to regenerate a random plot:
+
+```bash
+#!/bin/bash
+./gradlew randomPlot -q --console=plain
+```
+
+After running, view the generated plot:
+
+![Random Plot](./docs/img/random_plot.svg)

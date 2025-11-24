@@ -1,0 +1,238 @@
+@startuml kplotlib-class-diagram
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam packageStyle rectangle
+
+package "sml.plotlib.core" {
+
+    ' ===== Main Plot Class =====
+    class Plot {
+        - title: String
+        - xlabel: String
+        - ylabel: String
+        - theme: Theme
+        - seriesList: MutableList<Series>
+        - xAxis: Axis {readOnly}
+        - yAxis: Axis {readOnly}
+        --
+        + addSeries(series: Series)
+        + addSeries(name: String, x: List<Double>, y: List<Double>, color: Color?)
+        + getSeries(): List<Series>
+        + updateAxesRanges()
+        + show()
+        + save(path: String, width: Int, height: Int)
+        + saveSVG(path: String, width: Int, height: Int)
+    }
+
+    ' ===== Series and PlotStyle =====
+    class Series {
+        + name: String
+        + x: MutableList<Double>
+        + y: MutableList<Double>
+        + style: PlotStyle
+        + yLower: MutableList<Double>?
+        + yUpper: MutableList<Double>?
+        + hasErrorRegion: Boolean {computed}
+        --
+        {static} + Series(name: String, x: List<Double>, y: List<Double>, style: PlotStyle): Series
+    }
+
+    class PlotStyle {
+        + color: Color
+        + lineWidth: Float
+        + showPoints: Boolean
+        + pointRadius: Int
+        --
+        + toStroke(): BasicStroke
+    }
+
+    ' ===== Axis =====
+    class Axis {
+        + label: String
+        + min: Double
+        + max: Double
+        --
+        + updateRange(values: List<Double>)
+        + ticks(count: Int, useCleanTicks: Boolean): List<Double>
+    }
+
+    ' ===== Theme and Sub-themes =====
+    class Theme {
+        + fonts: FontTheme
+        + colors: ColorTheme
+        + margins: MarginTheme
+        + grid: GridTheme
+        + axisFormat: AxisFormatTheme
+        --
+        {static} + getDefault(): Theme
+        {static} + presentation(): Theme
+        {static} + paper(): Theme
+        {static} + dark(): Theme
+        {static} + minimal(): Theme
+    }
+
+    class FontTheme {
+        + family: String
+        + titleSize: Int
+        + labelSize: Int
+        + tickSize: Int
+        + legendSize: Int
+        + titleStyle: Int
+        + labelStyle: Int
+        + tickStyle: Int
+        + legendStyle: Int
+        --
+        + titleFont(): Font
+        + labelFont(): Font
+        + tickFont(): Font
+        + legendFont(): Font
+    }
+
+    class ColorTheme {
+        + background: Color
+        + foreground: Color
+        + gridMajor: Color
+        + gridMinor: Color
+        + axisBorder: Color
+        + palette: List<Color>
+        --
+        + getSeriesColor(index: Int): Color
+    }
+
+    class MarginTheme {
+        + left: Int
+        + right: Int
+        + top: Int
+        + bottom: Int
+    }
+
+    class GridTheme {
+        + showMajor: Boolean
+        + showMinor: Boolean
+        + majorLineWidth: Float
+        + minorLineWidth: Float
+    }
+
+    class AxisFormatTheme {
+        + autoCleanNumbers: Boolean
+        + maxDecimalPlaces: Int
+        + scientificNotationThreshold: Double
+        + showTrailingZeros: Boolean
+    }
+
+    ' ===== Renderers =====
+    class Renderer {
+        - plot: Plot
+        --
+        + display(initialWidth: Int, initialHeight: Int)
+        + save(path: String, width: Int, height: Int)
+        + draw(g2d: Graphics2D, width: Int, height: Int)
+        - drawAxes(g2d: Graphics2D, plotArea: Rectangle2D.Double, xTicks: List<Double>, yTicks: List<Double>)
+        - drawLegend(g2d: Graphics2D, plotArea: Rectangle2D.Double)
+    }
+
+    class SVGRenderer {
+        - plot: Plot
+        --
+        + save(path: String, width: Int, height: Int)
+        - buildSVG(width: Int, height: Int): String
+        - drawAxes(plotArea: Rectangle, xTicks: List<Double>, yTicks: List<Double>): String
+        - drawLegend(plotArea: Rectangle): String
+        - colorToRGB(color: Color): String
+        - colorToRGBA(color: Color, alpha: Double): String
+        - strokeToDashArray(stroke: BasicStroke): String
+        - escapeXML(text: String): String
+    }
+
+    ' ===== Animation =====
+    class AnimatedPlotPanel {
+        - plot: Plot
+        - fps: Int
+        - onFrame: (Int, Plot) -> Unit
+        - timer: Timer
+        - frameCount: Int
+        - renderer: Renderer
+        --
+        + start()
+        + pause()
+        + resume()
+        + stop()
+        # paintComponent(g: Graphics)
+    }
+
+    ' ===== Utility =====
+    object AxisFormatter {
+        {static} + format(value: Double, format: AxisFormatTheme): String
+        {static} + generateCleanTicks(min: Double, max: Double, count: Int): List<Double>
+    }
+
+    ' ===== Relationships =====
+    Plot "1" *-- "2" Axis : contains
+    Plot "1" *-- "1" Theme : has
+    Plot "1" o-- "*" Series : manages
+
+    Series "1" *-- "1" PlotStyle : styled by
+
+    Theme "1" *-- "1" FontTheme : contains
+    Theme "1" *-- "1" ColorTheme : contains
+    Theme "1" *-- "1" MarginTheme : contains
+    Theme "1" *-- "1" GridTheme : contains
+    Theme "1" *-- "1" AxisFormatTheme : contains
+
+    Renderer --> Plot : renders
+    SVGRenderer --> Plot : renders
+    AnimatedPlotPanel --> Plot : animates
+    AnimatedPlotPanel --> Renderer : uses
+
+    AxisFormatter ..> AxisFormatTheme : uses
+    Axis ..> AxisFormatter : uses
+
+    note right of Plot
+        Main plotting class that orchestrates
+        all components. Provides methods for
+        adding data series and rendering.
+    end note
+
+    note right of Theme
+        Provides complete theming system
+        with factory methods for presets:
+        - Default
+        - Presentation
+        - Paper
+        - Dark
+        - Minimal
+    end note
+
+    note bottom of AnimatedPlotPanel
+        Extends JPanel for frame-based
+        animation with callback support
+    end note
+}
+
+' ===== DSL Functions (shown separately) =====
+package "DSL Functions" <<Rectangle>> {
+    class "plot()" as dsl_plot <<function>> {
+        Creates Plot with DSL block
+    }
+
+    class "Plot.line()" as dsl_line <<extension>> {
+        Adds line series to plot
+    }
+
+    class "Plot.scatter()" as dsl_scatter <<extension>> {
+        Adds scatter series to plot
+    }
+
+    class "Plot.animate()" as dsl_animate <<extension>> {
+        Creates animated plot window
+    }
+
+    dsl_plot ..> Plot : creates
+    dsl_line ..> Plot : extends
+    dsl_scatter ..> Plot : extends
+    dsl_animate ..> AnimatedPlotPanel : creates
+}
+
+@enduml

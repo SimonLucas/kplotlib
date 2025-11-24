@@ -1,0 +1,139 @@
+@startuml kplotlib-theme-system
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+title KPlotLib - Theme System Architecture
+
+class Theme {
+    + fonts: FontTheme
+    + colors: ColorTheme
+    + margins: MarginTheme
+    + grid: GridTheme
+    + axisFormat: AxisFormatTheme
+    ====
+    **Factory Methods:**
+    {static} + getDefault(): Theme
+    {static} + presentation(): Theme
+    {static} + paper(): Theme
+    {static} + dark(): Theme
+    {static} + minimal(): Theme
+}
+
+class FontTheme <<data class>> {
+    + family: String = "SansSerif"
+    + titleSize: Int = 16
+    + labelSize: Int = 12
+    + tickSize: Int = 10
+    + legendSize: Int = 10
+    + titleStyle: Int = BOLD
+    + labelStyle: Int = BOLD
+    + tickStyle: Int = PLAIN
+    + legendStyle: Int = PLAIN
+    --
+    + titleFont(): Font
+    + labelFont(): Font
+    + tickFont(): Font
+    + legendFont(): Font
+}
+
+class ColorTheme <<data class>> {
+    + background: Color
+    + foreground: Color
+    + gridMajor: Color
+    + gridMinor: Color
+    + axisBorder: Color
+    + palette: List<Color>
+    --
+    + getSeriesColor(index: Int): Color
+}
+
+class MarginTheme <<data class>> {
+    + left: Int = 80
+    + right: Int = 40
+    + top: Int = 60
+    + bottom: Int = 60
+}
+
+class GridTheme <<data class>> {
+    + showMajor: Boolean = true
+    + showMinor: Boolean = false
+    + majorLineWidth: Float = 0.5f
+    + minorLineWidth: Float = 0.3f
+}
+
+class AxisFormatTheme <<data class>> {
+    + autoCleanNumbers: Boolean = true
+    + maxDecimalPlaces: Int = 6
+    + scientificNotationThreshold: Double = 1e6
+    + showTrailingZeros: Boolean = false
+}
+
+object AxisFormatter <<utility>> {
+    {static} + format(value: Double, format: AxisFormatTheme): String
+    {static} + generateCleanTicks(min: Double, max: Double, count: Int): List<Double>
+    ====
+    Utilities for clean number formatting
+    and intelligent tick generation
+}
+
+' ===== Composition Relationships =====
+Theme "1" *-- "1" FontTheme
+Theme "1" *-- "1" ColorTheme
+Theme "1" *-- "1" MarginTheme
+Theme "1" *-- "1" GridTheme
+Theme "1" *-- "1" AxisFormatTheme
+
+AxisFormatter ..> AxisFormatTheme : uses
+
+' ===== Theme Presets =====
+package "Theme Presets" <<Cloud>> {
+    class "Default" <<preset>> {
+        Standard theme
+        Blue/white colors
+    }
+
+    class "Presentation" <<preset>> {
+        Large fonts
+        High contrast
+    }
+
+    class "Paper" <<preset>> {
+        Publication-ready
+        Serif fonts
+        Black/white
+    }
+
+    class "Dark" <<preset>> {
+        Dark background
+        Light text
+    }
+
+    class "Minimal" <<preset>> {
+        Reduced visual elements
+        Clean appearance
+    }
+
+    Theme ..> "Default" : creates
+    Theme ..> "Presentation" : creates
+    Theme ..> "Paper" : creates
+    Theme ..> "Dark" : creates
+    Theme ..> "Minimal" : creates
+}
+
+note right of Theme
+    **Immutable Configuration**
+    Theme is passed to Plot
+    and used by Renderers
+    for all visual styling
+end note
+
+note bottom of AxisFormatter
+    **Stateless Utility**
+    Used by Axis class for
+    tick generation and by
+    Renderer for formatting
+end note
+
+@enduml
